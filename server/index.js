@@ -2,13 +2,16 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
-const session = require("express");
+const session = require("express-session");
 const passport = require("passport");
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;
 const COOKIE_SECRET = process.env.COOKIE_SECRET;
 const NODE_ENV = process.env.NODE_ENV;
+
+const indexRouter = require("./routes/indexRouter");
+const authRouter = require("./routes/authRouter");
 
 app.use(
   cors({
@@ -32,7 +35,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/", (req, res) => {});
+app.use("/", indexRouter);
+
+app.use("/auth", authRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

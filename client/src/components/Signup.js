@@ -2,9 +2,12 @@ import React from "react";
 import StyledSignup, { SignupButton } from "./styled/Signup.styled";
 
 const Signup = () => {
+  const Signin = (e) => {
+    e.preventDefault();
+  };
   return (
     <StyledSignup>
-      <form>
+      <form onSubmit={Signin}>
         <div>
           <h1>Social Media App</h1>
           <sub>Created by Jonghan(Joseph)</sub>

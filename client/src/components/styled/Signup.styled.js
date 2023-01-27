@@ -11,6 +11,11 @@ const Signup = styled.div`
     border-radius: 5px;
     height: 400px;
     width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
 `;
 

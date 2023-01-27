@@ -16,6 +16,10 @@ const Signup = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    box-shadow: ${({ theme }) => theme.shadow};
+    h1 {
+      font-family: "Courier New", Courier, cursive;
+    }
   }
 `;
 

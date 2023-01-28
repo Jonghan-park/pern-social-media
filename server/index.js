@@ -4,6 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const session = require("express-session");
 const passport = require("passport");
+require("./auth.js");
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;

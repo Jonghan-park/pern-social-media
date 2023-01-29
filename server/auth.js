@@ -34,7 +34,7 @@ passport.use(
             [account.sub]
           );
           user = {
-            id,
+            id: id.rows[0].id,
             username: account.name,
             img: account.picture,
           };
@@ -53,3 +53,13 @@ passport.use(
     }
   )
 );
+
+passport.serializeUser((user, done) => {
+  // loads into req.session.passport.user
+  done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+  // loads into req.user
+  done(null, user);
+});

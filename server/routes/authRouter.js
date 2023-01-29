@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+require("dotenv").config();
 const CLIENT_URL = process.env.CLIENT_URL;
 
 router.get("/", (req, res) => {

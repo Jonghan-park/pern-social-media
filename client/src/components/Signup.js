@@ -2,10 +2,9 @@ import React from "react";
 import StyledSignup, { SignupButton } from "./styled/Signup.styled";
 
 const Signup = () => {
-  const SERVER_URL = process.env.SERVER_URL;
   const Signin = (e) => {
     e.preventDefault();
-    const str = `${SERVER_URL}/auth/google`;
+    const str = `${process.env.REACT_APP_SERVER_URL}/auth/google`;
     window.open(str, "_self");
   };
   return (

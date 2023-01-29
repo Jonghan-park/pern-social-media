@@ -13,7 +13,15 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={gradientTheme}>
         <GlobalStyle />
-        <StyledApp>{user.loggedIn ? "logged in " : <Signup />}</StyledApp>
+        <StyledApp>
+          {user.loggedIn === null ? (
+            ""
+          ) : user.loggedIn === true ? (
+            "logged in "
+          ) : (
+            <Signup />
+          )}
+        </StyledApp>
       </ThemeProvider>
     </BrowserRouter>
   );

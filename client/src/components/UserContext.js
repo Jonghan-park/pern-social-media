@@ -3,12 +3,13 @@ import { useState, createContext, useEffect } from "react";
 export const UserContext = createContext();
 
 const Context = ({ children }) => {
-  const SERVER_URL = process.env.SERVER_URL;
   const [user, setUser] = useState(() => ({
-    loggedIn: false,
+    loggedIn: null,
   }));
   useEffect(() => {
-    fetch(`${SERVER_URL}`, { credentials: "include" })
+    fetch(`${process.env.REACT_APP_SERVER_URL}/account`, {
+      credentials: "include",
+    })
       .then((r) => r.json())
       .then((data) => {
         console.log({ ...data });

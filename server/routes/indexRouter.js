@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const isAuth = require("../isAuth");
 
-router.get("/", (req, res) => {
-  res.send("Hi home");
+router.get("/account", isAuth, (req, res) => {
+  res.json(req.user);
 });
 
 module.exports = router;

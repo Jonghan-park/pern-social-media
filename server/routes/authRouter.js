@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+const CLIENT_URL = process.env.CLIENT_URL;
 
 router.get("/", (req, res) => {
   res.send("Hi auth");
@@ -19,7 +20,7 @@ router.get(
     session: true,
   }),
   (req, res) => {
-    res.send(req.user);
+    res.redirect(`${CLIENT_URL}`);
   }
 );
 

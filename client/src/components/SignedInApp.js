@@ -1,7 +1,13 @@
 import React from "react";
+import Nav from "./Nav";
+import StyledSignedInApp from "./styled/SignedInApp.styled";
 
 const SignedInApp = () => {
-  return <div>SignedInApp</div>;
+  return (
+    <StyledSignedInApp>
+      <Nav />
+    </StyledSignedInApp>
+  );
 };
 
 export default SignedInApp;
